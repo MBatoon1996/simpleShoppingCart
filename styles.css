@@ -1,0 +1,7 @@
+td > * {
+    vertical-align: middle;
+}
+
+input.qtyInput {
+    width: 50px;
+}
