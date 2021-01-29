@@ -25,7 +25,7 @@ $(document).ready(function(){
     getTotal();
 
     var timeout;
-    $('.qtyInput').on('input', function(){
+    $(document).on('input', '.qtyInput',function(){
         clearTimeout(timeout);
         timeout = setTimeout(function(){
             getSubtotal();
@@ -42,13 +42,19 @@ $(document).ready(function(){
         $('tbody').append('<tr>' + 
         '<td class="item">' + item + '</td>' +
         '<td class="price">' + price + '</td>' +
-        '<td class="qty"><b>QTY </b><input class="qtyInput" type="number" value="' + qty +'"> <button type="button" class="btn btn-sm cancel">Cancel</button></td>' + 
+        '<td class="qty"><b>QTY </b><input class="qtyInput" type="number" value="' + qty +'"> <button type="button" class="btn btn-sm cancel">Cancel</button></td>' + '<td class="subtotal"></td>' +
         '</tr>');
+
+        getSubtotal();
+        getTotal();
+        $(this).children('[name=item]').val('');
+        $(this).children('[name=price]').val('');
+        $(this).children('[name=qty]').val('');
     });
 
 });
 
-$('.btn.cancel').on('click', function(event){
+$(document).on('click', '.btn.cancel', function(event){
     $(this).closest('tr').remove();
     getTotal();
 });
