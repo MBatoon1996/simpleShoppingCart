@@ -44,6 +44,14 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    <form class="col-12 mt-2 mb-4" id="addItem">
+                        <input class="mx-2" name="item"  type="text" placeholder="Item" required/>
+                        <input class="mx-2" name="price" type="number" step="0.01" placeholder="Price"/>
+                        <input class="mx-2" name="qty" type="number" placeholder="Quantity"/>
+                        <button class="btn btn-primary btn-sm btnAddItem">add</button>
+                    </form>
+
                     <h1>Total Price:</h1>
                     <h1 id="total"></h1>
                 </div>

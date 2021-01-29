@@ -32,6 +32,20 @@ $(document).ready(function(){
             getTotal();
         }, 300);
     });
+
+    $('#addItem').on('submit', function(event){
+        event.preventDefault();
+        var item = $(this).children('[name=item]').val();
+        var price = $(this).children('[name=price]').val();
+        var qty = $(this).children('[name=qty]').val();
+        
+        $('tbody').append('<tr>' + 
+        '<td class="item">' + item + '</td>' +
+        '<td class="price">' + price + '</td>' +
+        '<td class="qty"><b>QTY </b><input class="qtyInput" type="number" value="' + qty +'"> <button type="button" class="btn btn-sm cancel">Cancel</button></td>' + 
+        '</tr>');
+    });
+
 });
 
 $('.btn.cancel').on('click', function(event){
