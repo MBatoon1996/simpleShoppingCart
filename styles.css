@@ -5,3 +5,11 @@ td > * {
 input.qtyInput {
     width: 50px;
 }
+
+input[name="qty"] {
+    width: 100px;
+}
+
+input[name="price"] {
+    width: 120px;
+}
