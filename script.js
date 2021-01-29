@@ -16,6 +16,7 @@ var getTotal = function(){
         subtotal = parseFloat(subtotal.substring(1));
         total+=subtotal;
     });
+    total = total.toFixed(2);
     $('#total').html("$"+total);
 }
 
