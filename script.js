@@ -22,6 +22,15 @@ var getTotal = function(){
 $(document).ready(function(){
     getSubtotal();
     getTotal();
+
+    var timeout;
+    $('.qtyInput').on('input', function(){
+        clearTimeout(timeout);
+        timeout = setTimeout(function(){
+            getSubtotal();
+            getTotal();
+        }, 300);
+    });
 });
 
 $('.btn.cancel').on('click', function(event){
