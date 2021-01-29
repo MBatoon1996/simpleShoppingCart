@@ -55,6 +55,9 @@ $(document).ready(function(){
 });
 
 $(document).on('click', '.btn.cancel', function(event){
-    $(this).closest('tr').remove();
-    getTotal();
+    var itemName = $(this).parent().prevAll('.item').text();
+    if(confirm("Remove " + itemName + " from shopping cart?")){
+        $(this).closest('tr').remove();
+        getTotal();
+    }
 });
